@@ -1,34 +1,6 @@
-print("0") # Real decorator
+print ("Decorating A Function Manually")
 
-def my_decorator_0(func):
-    print(f"Decorating {func.__name__}")
-    def wrapper():
-        func()  # Call the original function
-    return wrapper
-
-@my_decorator_0
-def say_hello_0():
-    print("Hello, world!")
-
-say_hello_0()
-
-
-
-print("\n1") # Not a real decorator
-
-def say_hello_1():
-    print("Hello, world!")
-
-def my_decorator_1(func): # This really only returns the same function it was passed
-    print(f"Not decorating, just returning function pointer {func.__name__}")
-    return func
-
-my_decorator_1(say_hello_1)() # The decorator returns the function it was passed, then we execute it
-
-
-
-print("\n2") # Real decorator, manually decorated
-
+# Create our decorator function
 def my_decorator_2(func): # This actually gets called during decoration, returning 'wrapper', now whatever you decorated is now a function pointer to 'wrapper' which has access to the say_hello funciton pointer
     print(f"Decorating {func.__name__}")
     def wrapper(): # This appears to be a closure, we're creating a new function that has access to the function pointer from outside
@@ -37,21 +9,21 @@ def my_decorator_2(func): # This actually gets called during decoration, returni
         print(f"Function {func.__name__} finished execution.")
     return wrapper # This really returns 'wrapper' instead of 'say_hello, but wrapper has the function pointer inside it that get's called when you call wrapper
 
+# Create the function we want to decorate
 def say_hello_2():
     print("Hello, world!")
 
-say_hello_2 = my_decorator_2(say_hello_2) # This is us decorating, it returns a function pointer to wrapper which we overwrite our variable contents with
+# Now we manually decorate our function
+# We pass our function to the decorator
+# The decorator then returns a pointer to the new wrapper function, which we overwrite our function with
+say_hello_2 = my_decorator_2(say_hello_2)
 
-say_hello_2() # this now calls wrapper
-
-# We are creating a function
-# We then pass a pointer to that function to the decorator, which returns a function pointer to wrapper and sets your function name to point to it, wrapper has the original pointer value stores
-# We then call the function pointer to wrapper, wrapper then calls the stored function pointer to the function we wrapped
+# Our function name now calls wrapper
+say_hello_2()
 
 
 
-print("\n3") # Real decorator, correctly decorated
-
+print("Decorate A Function Using A Decorator")
 def my_decorator_3(func): # This actually gets called during decoration, returning 'wrapper', now whatever you decorated is now a function pointer to 'wrapper' which has access to the say_hello funciton pointer
     print(f"Decorating {func.__name__}")
     def wrapper(): # This appears to be a closure, we're creating a new function that has access to the function pointer from outside

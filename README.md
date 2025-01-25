@@ -1,9 +1,93 @@
 # Python Decorator Explanation
 
-An explanation and breakdown of decorators in python, how they work, any why we might use one.
+An explanation and breakdown of decorators in python, how they work.
 
 
-### Step By Step Explanation
+## What Is Decorating
+
+Decorating a function essentially wraps it, allowing us to add code before and after.
+
+
+## When Would I Use A Decorator
+
+Decorators are useful when we have many functions where we want to run some code both before and after their's execution.
+
+A good use could be for performance monitoring or measurement of the execution time of the function.
+
+You could print the time the function starts and the time it completes, allowing easy calculation of how long the function took to run.
+
+
+## Using A Decorator (Example)
+
+Here we will create two function that print a statement.
+
+We want to add code before and after the function runs.
+
+
+### Before Decorating
+
+#### Code
+
+```python
+def our_function():
+    print("Doing something cool")
+
+def our_other_function():
+    print("Doing another cool thing")
+
+our_function()
+our_other_function()
+```
+
+#### Result
+
+```
+Doing something cool
+Doing another cool thing
+```
+
+
+### After Decorating
+
+#### Code
+
+```python
+def our_decorator(func):
+    def wrapper():
+        print("I'm about to do something cool")
+        func()
+        print("I did something cool")
+    return wrapper
+
+@our_decorator
+def our_function():
+    print("Doing something cool")
+
+@our_decorator
+def our_other_function():
+    print("Doing another cool thing")
+
+our_function()
+
+our_other_function()
+```
+
+#### Result
+
+```
+I'm about to do something cool
+Doing something cool
+I did something cool
+I'm about to do something cool
+Doing another cool thing
+I did something cool
+
+```
+
+The code in our decorator was run before and after each of our decorated functions.
+
+
+### How A Decorator Works
 
 You create a function with the name `my_function` that does something interesting.
 
