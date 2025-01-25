@@ -113,5 +113,5 @@ The function the decorator created has the copy of the pointer to `my_function` 
 
 It starts `my_function` using that pointer, then returns.
 
-However, you can add code before and after it starts `my_function`, this is the functionality that a decorator adds.
+However, you can add code before and after it starts `my_function`, this is the value that a decorator adds.
 
