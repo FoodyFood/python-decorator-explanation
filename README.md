@@ -115,3 +115,13 @@ It starts `my_function` using that pointer, then returns.
 
 However, you can add code before and after it starts `my_function`, this is the value that a decorator adds.
 
+
+## Examples
+
+There are two examples in [main.py](./main.py), one where we 'manually' decorate a function, and one were we use the decorator correctly.
+
+
+## Improvements Or Notes
+
+Please reach out if there are any improvements I could make.
+
