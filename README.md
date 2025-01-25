@@ -1,6 +1,6 @@
 # Python Decorator Explanation
 
-An explanation and breakdown of decorators in python, how they work.
+An explanation and breakdown of decorators in python, how they work, and what we might use them for.
 
 
 ## What Is Decorating
