@@ -95,7 +95,7 @@ You decorate the function using a decorator.
 
 At decoration, a pointer to `my_function` is passed to decorator function as a parameter.
 
-The decorator function stores a copy of the pointer to `my_function`.
+The decorator function stores a copy of the `my_function` pointer.
 
 The decorator creates a new function (called wrapper in the examples, but can be any name).
 
