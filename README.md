@@ -1,4 +1,4 @@
-# Python Decorator Explanation
+# Python Decorators
 
 An explanation and breakdown of decorators in python, how they work, and what we might use them for.
 
