@@ -45,7 +45,7 @@ say_hello_2 = my_decorator_2(say_hello_2) # This is us decorating, it returns a 
 say_hello_2() # this now calls wrapper
 
 # We are creating a function
-# We then pass a pointer to that function to the decorator, which returns a function pointer to wrapper, wrapper has the original pointer value stores
+# We then pass a pointer to that function to the decorator, which returns a function pointer to wrapper and sets your function name to point to it, wrapper has the original pointer value stores
 # We then call the function pointer to wrapper, wrapper then calls the stored function pointer to the function we wrapped
 
 
