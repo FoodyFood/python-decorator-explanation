@@ -12,7 +12,7 @@ Decorating a function essentially wraps it, allowing us to add code that runs be
 
 Decorators are useful when we have many functions where we want to run some code both before and after their execution.
 
-Simple example: [simple_examples_with_comments.py](./simple_examples_with_comments.py.py)
+Simple example: [simple_examples_with_comments.py](./simple_examples_with_comments.py)
 
 A good use could be for performance monitoring or measurement of the execution time of the function
 
@@ -22,7 +22,7 @@ Performance decorator example: [performance_monitoring_using_a_decorator.py](./p
 
 ## Using A Decorator (Example)
 
-Here we will create two function that print a statement.
+Here we will create two functions that print a statement.
 
 We want to add code before and after the function runs.
 
@@ -108,7 +108,7 @@ The code in our decorator was run before and after each of our decorated functio
     The decorator creates a new function (called wrapper in the examples, but can be
     any name).
 
-    The decorator returns a pointer to tbe new function it created.
+    The decorator returns a pointer to the new function it created.
 
     Your function `my_function` is then updated to point to the new function the
     decorator created.
