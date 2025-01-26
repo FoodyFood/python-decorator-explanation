@@ -22,7 +22,7 @@ say_hello_0 = my_decorator_0(say_hello_0)
 say_hello_0()
 
 
-print("Decorate A Function Using A Decorator")
+print("\nDecorate A Function Using A Decorator")
 def my_decorator_1(func):
     print(f"Decorating {func.__name__}")
     def wrapper():

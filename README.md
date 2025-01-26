@@ -5,17 +5,20 @@ An explanation and breakdown of decorators in python, how they work, and what we
 
 ## What Is Decorating
 
-Decorating a function essentially wraps it, allowing us to add code before and after.
+Decorating a function essentially wraps it, allowing us to add code that runs before and after the function runs.
 
 
 ## When Would I Use A Decorator
 
-Decorators are useful when we have many functions where we want to run some code both before and after their's execution.
+Decorators are useful when we have many functions where we want to run some code both before and after their execution.
 
-A good use could be for performance monitoring or measurement of the execution time of the function.
+Simple example: [simple_examples_with_comments.py](./simple_examples_with_comments.py.py)
+
+A good use could be for performance monitoring or measurement of the execution time of the function
 
 You could print the time the function starts and the time it completes, allowing easy calculation of how long the function took to run.
 
+Performance decorator example: [performance_monitoring_using_a_decorator.py](./performance_monitoring_using_a_decorator.py)
 
 ## Using A Decorator (Example)
 
@@ -89,36 +92,71 @@ The code in our decorator was run before and after each of our decorated functio
 
 ### How A Decorator Works
 
-You create a function with the name `my_function` that does something interesting.
+#### The Function
 
-You decorate the function using a decorator.
+    You create a function with the name `my_function` that does something interesting.
 
-At decoration, a pointer to `my_function` is passed to decorator function as a parameter.
+#### Decoration
 
-The decorator function stores a copy of the `my_function` pointer.
+    You decorate the function using a decorator.
 
-The decorator creates a new function (called wrapper in the examples, but can be any name).
+    At decoration, a pointer to `my_function` is passed to decorator function as a parameter.
 
-The decorator returns a pointer to tbe new function it created.
+    The decorator function stores a copy of the `my_function` pointer.
 
-Your function `my_function` is then updated to point to the new function the decorator created.
+    The decorator creates a new function (called wrapper in the examples, but can be any name).
 
-When you call `my_function`, it now calls the function that was created by the decorator.
+    The decorator returns a pointer to tbe new function it created.
 
-Now we call `my_function()`.
+    Your function `my_function` is then updated to point to the new function the decorator created.
 
-Instead of starting the `my_function` code, it starts the new function that the decorator created.
+    When you call `my_function`, it now calls the function that was created by the decorator.
 
-The function the decorator created has the copy of the pointer to `my_function` that was stored earlier.
+#### Calling Your Function
 
-It starts `my_function` using that pointer, then returns.
+    Now we call `my_function()`.
 
-However, you can add code before and after it starts `my_function`, this is the value that a decorator adds.
+    Instead of starting the `my_function` code, it starts the new function that the decorator created.
+
+    The function the decorator created has the copy of the pointer to `my_function` that was stored earlier.
+
+    It starts `my_function` using that pointer, then returns.
+
+    However, you can add code before and after it starts `my_function`, this is the value that a decorator adds.
 
 
 ## Examples
 
-There are two examples in [main.py](./main.py), one where we 'manually' decorate a function, and one were we use the decorator correctly.
+### Example 1
+
+There are two examples in [simple_examples_with_comments.py](./simple_examples_with_comments.py.py), one where we 'manually' decorate a function, and one were we use the decorator correctly.
+
+#### Result Of Running Simple Examples
+
+```
+Decorating A Function Manually
+Decorating say_hello_0
+Calling function: say_hello_0
+Hello, world!
+Function say_hello_0 finished execution.
+
+Decorate A Function Using A Decorator
+Decorating say_hello_1
+Calling function: say_hello_1
+Hello, world!
+Function say_hello_1 finished execution.
+```
+
+### Example 2
+
+A more practical example has been provided in [performance_monitoring_using_a_decorator.py](./performance_monitoring_using_a_decorator.py) where we use a decorator to measure how long some functions take to execute.
+
+#### Result Of Running Performance Monitor Example
+
+```
+Execution Time: 3.003030 seconds
+Execution Time: 5.004452 seconds
+```
 
 
 ## Improvements Or Notes
