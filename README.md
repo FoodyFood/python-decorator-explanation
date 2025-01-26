@@ -127,11 +127,13 @@ The code in our decorator was run before and after each of our decorated functio
 
 ## Examples
 
-### Example 1
+### Example 1 - Simple Example With Comments
 
 There are two examples in [simple_examples_with_comments.py](./simple_examples_with_comments.py.py), one where we 'manually' decorate a function, and one were we use the decorator correctly.
 
-#### Result Of Running Simple Examples
+#### Result
+
+If we run the simple examples we will get an output similar to:
 
 ```
 Decorating A Function Manually
@@ -147,11 +149,13 @@ Hello, world!
 Function say_hello_1 finished execution.
 ```
 
-### Example 2
+### Example 2 - Performance Monitor
 
 A more practical example has been provided in [performance_monitoring_using_a_decorator.py](./performance_monitoring_using_a_decorator.py) where we use a decorator to measure how long some functions take to execute.
 
-#### Result Of Running Performance Monitor Example
+#### Result
+
+If we run the example we will get an output similar to:
 
 ```
 Execution Time: 3.003030 seconds
