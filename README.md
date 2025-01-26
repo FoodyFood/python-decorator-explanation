@@ -136,7 +136,7 @@ The code in our decorator was run before and after each of our decorated functio
 
 ### Example 1 - Simple Example With Comments
 
-There are two examples in [simple_examples_with_comments.py](./simple_examples_with_comments.py.py), one where we 'manually' decorate a function, and one were we use the decorator correctly.
+There are two examples in [simple_examples_with_comments.py](./simple_examples_with_comments.py), one where we 'manually' decorate a function, and one were we use the decorator correctly.
 
 #### Result
 
@@ -172,5 +172,5 @@ Execution Time: 5.004452 seconds
 
 ## Improvements Or Notes
 
-Please reach out if there are any improvements I could make.
+Please reach out if there are any improvements I could make, you can reach me at: [dx@outlook.ie](mailto:dx@outlook.ie)
 
